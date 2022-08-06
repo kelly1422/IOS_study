@@ -17,7 +17,7 @@ class ViewController: UIViewController {
 
     @IBAction func tapChangeColorButton(_ sender: UIButton) {
         self.colorView.backgroundColor = UIColor.blue
-        print("a")
+        print("button clicked")
     }
     
 }
