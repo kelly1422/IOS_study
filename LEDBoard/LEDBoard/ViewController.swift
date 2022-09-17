@@ -15,8 +15,8 @@ class ViewController: UIViewController, LEDBoardSettingDelegate {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let viewController = segue.destination as? SettingViewController {
-            viewController.settingDelegate = self
+        if let settingViewController = segue.destination as? SettingViewController {
+            settingViewController.settingDelegate = self
         }
     }
     

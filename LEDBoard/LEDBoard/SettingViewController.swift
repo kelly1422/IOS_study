@@ -20,6 +20,9 @@ class SettingViewController: UIViewController {
     @IBOutlet weak var blueButton: UIButton!
     @IBOutlet weak var orangeButton: UIButton!
     
+    private var selectedTextColor: UIColor = UIColor.yellow
+    private var selectedBackColor: UIColor = UIColor.black
+    
     weak var settingDelegate: LEDBoardSettingDelegate?
     
     override func viewDidLoad() {
@@ -47,20 +50,25 @@ class SettingViewController: UIViewController {
     }
     
     @IBAction func tapSaveButton(_ sender: UIButton) {
-//        let selectedBackColor =
-//        settingDelegate?.setLEDBoard(labelText: <#T##String#>, backColor: <#T##UIColor#>, textColor: <#T##UIColor#>)
-//        self.navigationController?.popViewController(animated: true)
+        settingDelegate?.setLEDBoard(
+            labelText: textField.text ?? "",
+            backColor: selectedBackColor,
+            textColor: selectedTextColor
+        )
+        self.navigationController?.popViewController(animated: true)
     }
     
     private func changeTextColor(color: UIColor) {
         yellowButton.alpha = (color == UIColor.yellow ? 1 : 0.3)
         pinkButton.alpha = (color == UIColor.systemPink ? 1 : 0.3)
         greenButton.alpha = (color == UIColor.green ? 1 : 0.3)
+        selectedTextColor = color
     }
     
     private func changeBackColor(color: UIColor) {
         blackButton.alpha = (color == UIColor.black ? 1 : 0.3)
         blueButton.alpha = (color == UIColor.blue ? 1 : 0.3)
         orangeButton.alpha = (color == UIColor.orange ? 1 : 0.3)
+        selectedBackColor = color
     }
 }
