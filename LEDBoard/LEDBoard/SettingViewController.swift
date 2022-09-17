@@ -27,11 +27,23 @@ class SettingViewController: UIViewController {
     }
     
     @IBAction func tapTextColorButton(_ sender: UIButton) {
-        changeTextColor(color: sender.currentTitle ?? "")
+        if sender == yellowButton {
+            changeTextColor(color: UIColor.yellow)
+        } else if sender == pinkButton {
+            changeTextColor(color: UIColor.systemPink)
+        } else if sender == greenButton {
+            changeTextColor(color: UIColor.green)
+        }
     }
     
     @IBAction func tapBackColorButton(_ sender: UIButton) {
-        changeBackColor(color: sender.currentTitle ?? "")
+        if sender == blackButton {
+            changeBackColor(color: UIColor.black)
+        } else if sender == blueButton {
+            changeBackColor(color: UIColor.blue)
+        } else if sender == orangeButton {
+            changeBackColor(color: UIColor.orange)
+        }
     }
     
     @IBAction func tapSaveButton(_ sender: UIButton) {
@@ -40,15 +52,15 @@ class SettingViewController: UIViewController {
 //        self.navigationController?.popViewController(animated: true)
     }
     
-    private func changeTextColor(color: String) {
-        yellowButton.alpha = (color == "노란색" ? 1 : 0.3)
-        pinkButton.alpha = (color == "분홍색" ? 1 : 0.3)
-        greenButton.alpha = (color == "초록색" ? 1 : 0.3)
+    private func changeTextColor(color: UIColor) {
+        yellowButton.alpha = (color == UIColor.yellow ? 1 : 0.3)
+        pinkButton.alpha = (color == UIColor.systemPink ? 1 : 0.3)
+        greenButton.alpha = (color == UIColor.green ? 1 : 0.3)
     }
     
-    private func changeBackColor(color: String) {
-        blackButton.alpha = (color == "검정색" ? 1 : 0.3)
-        blueButton.alpha = (color == "파란색" ? 1 : 0.3)
-        orangeButton.alpha = (color == "주황색" ? 1 : 0.3)
+    private func changeBackColor(color: UIColor) {
+        blackButton.alpha = (color == UIColor.black ? 1 : 0.3)
+        blueButton.alpha = (color == UIColor.blue ? 1 : 0.3)
+        orangeButton.alpha = (color == UIColor.orange ? 1 : 0.3)
     }
 }
