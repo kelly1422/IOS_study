@@ -12,11 +12,15 @@ class ViewController: UIViewController, LEDBoardSettingDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        label.textColor = .yellow
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let settingViewController = segue.destination as? SettingViewController {
             settingViewController.settingDelegate = self
+            settingViewController.initialLabelText = label.text ?? ""
+            settingViewController.selectedTextColor = label.textColor
+            settingViewController.selectedBackColor = view.backgroundColor ?? .black
         }
     }
     

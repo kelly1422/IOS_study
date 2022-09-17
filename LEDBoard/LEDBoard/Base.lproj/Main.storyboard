@@ -24,7 +24,7 @@
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="labelColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="ZVU-vG-Nxa" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9ji-AJ-I9s"/>
                             <constraint firstItem="ZVU-vG-Nxa" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="JCa-6b-eFt"/>
@@ -239,9 +239,6 @@
         </scene>
     </scenes>
     <resources>
-        <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

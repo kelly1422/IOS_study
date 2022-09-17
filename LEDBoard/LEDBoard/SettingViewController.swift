@@ -20,32 +20,40 @@ class SettingViewController: UIViewController {
     @IBOutlet weak var blueButton: UIButton!
     @IBOutlet weak var orangeButton: UIButton!
     
-    private var selectedTextColor: UIColor = UIColor.yellow
-    private var selectedBackColor: UIColor = UIColor.black
+    var initialLabelText = ""
+    var selectedTextColor: UIColor = .yellow
+    var selectedBackColor: UIColor = .black
     
     weak var settingDelegate: LEDBoardSettingDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setInitialSetting()
+    }
+    
+    private func setInitialSetting() {
+        textField.text = initialLabelText
+        changeTextColor(color: selectedTextColor)
+        changeBackColor(color: selectedBackColor)
     }
     
     @IBAction func tapTextColorButton(_ sender: UIButton) {
         if sender == yellowButton {
-            changeTextColor(color: UIColor.yellow)
+            changeTextColor(color: .yellow)
         } else if sender == pinkButton {
-            changeTextColor(color: UIColor.systemPink)
+            changeTextColor(color: .systemPink)
         } else if sender == greenButton {
-            changeTextColor(color: UIColor.green)
+            changeTextColor(color: .green)
         }
     }
     
     @IBAction func tapBackColorButton(_ sender: UIButton) {
         if sender == blackButton {
-            changeBackColor(color: UIColor.black)
+            changeBackColor(color: .black)
         } else if sender == blueButton {
-            changeBackColor(color: UIColor.blue)
+            changeBackColor(color: .blue)
         } else if sender == orangeButton {
-            changeBackColor(color: UIColor.orange)
+            changeBackColor(color: .orange)
         }
     }
     
@@ -59,16 +67,16 @@ class SettingViewController: UIViewController {
     }
     
     private func changeTextColor(color: UIColor) {
-        yellowButton.alpha = (color == UIColor.yellow ? 1 : 0.3)
-        pinkButton.alpha = (color == UIColor.systemPink ? 1 : 0.3)
-        greenButton.alpha = (color == UIColor.green ? 1 : 0.3)
+        yellowButton.alpha = (color == .yellow ? 1 : 0.3)
+        pinkButton.alpha = (color == .systemPink ? 1 : 0.3)
+        greenButton.alpha = (color == .green ? 1 : 0.3)
         selectedTextColor = color
     }
     
     private func changeBackColor(color: UIColor) {
-        blackButton.alpha = (color == UIColor.black ? 1 : 0.3)
-        blueButton.alpha = (color == UIColor.blue ? 1 : 0.3)
-        orangeButton.alpha = (color == UIColor.orange ? 1 : 0.3)
+        blackButton.alpha = (color == .black ? 1 : 0.3)
+        blueButton.alpha = (color == .blue ? 1 : 0.3)
+        orangeButton.alpha = (color == .orange ? 1 : 0.3)
         selectedBackColor = color
     }
 }
