@@ -379,6 +379,9 @@
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isRound" value="YES"/>
                                                         </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="tapPointButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Q8e-qI-Lma"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gie-vh-lra" customClass="RoundButton" customModule="Calculator" customModuleProvider="target">
                                                         <rect key="frame" x="267.66666666666669" y="0.0" width="74.333333333333314" height="74.333333333333329"/>
@@ -454,63 +457,4 @@
             <point key="canvasLocation" x="195" y="109"/>
         </scene>
     </scenes>
-    <designables>
-        <designable name="2hj-Kg-MGG">
-            <size key="intrinsicContentSize" width="30" height="60"/>
-        </designable>
-        <designable name="C4M-0X-Wnw">
-            <size key="intrinsicContentSize" width="30" height="60"/>
-        </designable>
-        <designable name="F73-IW-JL4">
-            <size key="intrinsicContentSize" width="30" height="60"/>
-        </designable>
-        <designable name="ITC-xL-a06">
-            <size key="intrinsicContentSize" width="30" height="60"/>
-        </designable>
-        <designable name="LFr-b1-EMC">
-            <size key="intrinsicContentSize" width="30" height="60"/>
-        </designable>
-        <designable name="LrA-Tp-PKV">
-            <size key="intrinsicContentSize" width="30" height="60"/>
-        </designable>
-        <designable name="TQA-xt-iSd">
-            <size key="intrinsicContentSize" width="30" height="60"/>
-        </designable>
-        <designable name="Tlw-xQ-NO4">
-            <size key="intrinsicContentSize" width="30" height="60"/>
-        </designable>
-        <designable name="Yi7-oN-565">
-            <size key="intrinsicContentSize" width="42" height="48"/>
-        </designable>
-        <designable name="cLX-8F-O1X">
-            <size key="intrinsicContentSize" width="30" height="60"/>
-        </designable>
-        <designable name="cwU-B0-NcE">
-            <size key="intrinsicContentSize" width="41" height="48"/>
-        </designable>
-        <designable name="gie-vh-lra">
-            <size key="intrinsicContentSize" width="30" height="60"/>
-        </designable>
-        <designable name="hEW-eZ-8YA">
-            <size key="intrinsicContentSize" width="30" height="60"/>
-        </designable>
-        <designable name="iIL-Vt-f5O">
-            <size key="intrinsicContentSize" width="30" height="60"/>
-        </designable>
-        <designable name="jgz-Ns-YXI">
-            <size key="intrinsicContentSize" width="30" height="60"/>
-        </designable>
-        <designable name="oES-mL-oJB">
-            <size key="intrinsicContentSize" width="30" height="60"/>
-        </designable>
-        <designable name="sPX-mQ-gPx">
-            <size key="intrinsicContentSize" width="30" height="60"/>
-        </designable>
-        <designable name="wNd-Yl-7Iv">
-            <size key="intrinsicContentSize" width="30" height="60"/>
-        </designable>
-        <designable name="xaf-7X-9op">
-            <size key="intrinsicContentSize" width="30" height="48"/>
-        </designable>
-    </designables>
 </document>
