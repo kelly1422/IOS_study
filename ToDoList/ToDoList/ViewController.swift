@@ -10,23 +10,24 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    var tasks = [Task]()
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
 
     @IBAction func tapEditButton(_ sender: UIBarButtonItem) {
-        var alert = UIAlertController(title: "할 일 등록", message: nil, preferredStyle: .alert)
-        var addButton = UIAlertAction(title: "등록", style: .default) { _ in
-            
+        let alert = UIAlertController(title: "할 일 등록", message: nil, preferredStyle: .alert)
+        let addButton = UIAlertAction(title: "등록", style: .default) { [weak self] _ in
+            guard let title = alert.textFields?[0].text else { return }
+            let newTask = Task(title: title, done: false)
+            self?.tasks.append(newTask)
         }
-        var cancelButton = UIAlertAction(title: "취소", style: .cancel) { _ in
-            
-        }
+        let cancelButton = UIAlertAction(title: "취소", style: .cancel, handler: nil)
         alert.addAction(cancelButton)
         alert.addAction(addButton)
-        alert.addTextField { UITextField in
-            UITextField.placeholder = "할 일을 입력해주세요."
+        alert.addTextField { textField in
+            textField.placeholder = "할 일을 입력해주세요."
         }
         self.present(alert, animated: true, completion: nil)
     }
