@@ -26,7 +26,6 @@ class ViewController: UIViewController {
         self.tableView.delegate = self
         self.doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(tapDoneButton))
         self.loadTasks()
-        // Do any additional setup after loading the view.
     }
     
     @objc func tapDoneButton() {
