@@ -16,16 +16,29 @@ class ViewController: UIViewController {
         }
     }
     
+    // strong 으로 선언한 이유 -> done이 되어버리면 메모리에서 해제되기 때문에 
+    @IBOutlet var editButton: UIBarButtonItem!
+    var doneButton: UIBarButtonItem?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.dataSource = self
         self.tableView.delegate = self
+        self.doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(tapDoneButton))
         self.loadTasks()
         // Do any additional setup after loading the view.
     }
+    
+    @objc func tapDoneButton() {
+        self.navigationItem.leftBarButtonItem = editButton
+        self.tableView.setEditing(false, animated: true)
+    }
 
     @IBAction func tapEditButton(_ sender: UIBarButtonItem) {
-    
+        if !self.tasks.isEmpty {
+            self.navigationItem.leftBarButtonItem = doneButton
+            self.tableView.setEditing(true, animated: true)
+        }
     }
     
     @IBAction func tapAddButoon(_ sender: UIBarButtonItem) {
@@ -82,6 +95,27 @@ extension ViewController: UITableViewDataSource {
             cell.accessoryType = .none
         }
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        self.tasks.remove(at: indexPath.row)
+        self.tableView.deleteRows(at: [indexPath], with: .automatic)
+        
+        if self.tasks.isEmpty {
+            self.tapDoneButton()
+        }
+    }
+     
+    func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        var tasks = self.tasks
+        let task = tasks[sourceIndexPath.row]
+        tasks.remove(at: sourceIndexPath.row)
+        tasks.insert(task, at: destinationIndexPath.row)
+        self.tasks = tasks
     }
 }
 
