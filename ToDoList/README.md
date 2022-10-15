@@ -11,7 +11,7 @@
 
 </br>
 
-## TOD
+## Today I Learned
 - ARC
 - retain cycle
 - UITabelView
